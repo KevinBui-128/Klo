@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:klo/data/models/destination.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -21,15 +20,31 @@ class _HomeScreenState extends State<HomeScreen> {
             _index = index;
           });
         },
-        items: allDestinations.map(
-          (Destination destination) {
-            return BottomNavigationBarItem(
-              icon: Icon(destination.icon),
-              backgroundColor: destination.color,
-              title: Text(destination.title),
-            );
-          },
-        ).toList(),
+        // selectedItemColor: Theme.of(context).primaryColor,
+        // unselectedItemColor: Theme.of(context).scaffoldBackgroundColor,
+        // backgroundColor: Colors.,
+        items: [
+          BottomNavigationBarItem(
+              icon: 
+              // _index == 0
+              //     ? Image.asset('assets/img/messageC.png')
+                  Image.asset('assets/img/message.png'),
+              title: Text('Message'),
+              backgroundColor: Colors.red),
+          BottomNavigationBarItem(
+            icon: _index == 1 ? Icon(Icons.menu) : Icon(Icons.mic),
+            title: Text('Message'),
+          ),
+          BottomNavigationBarItem(
+            icon: _index == 2 ? Icon(Icons.mms) : Icon(Icons.mic),
+            title: Text('Message'),
+          ),
+          BottomNavigationBarItem(
+            icon: _index == 3 ? Icon(Icons.movie_filter) : Icon(Icons.mic),
+            title: Text('Message'),
+            // backgroundColor: Colors.white
+          ),
+        ],
       ),
     );
   }
